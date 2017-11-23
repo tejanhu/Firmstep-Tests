@@ -9,92 +9,89 @@
 
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet">
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link href="css/styles.css" rel="stylesheet">
+	<link href="assets/css/styles.css" rel="stylesheet">
 </head>
 
 <body>
 	<div class="main-content">
 
-		<div class="entire-products page">
+			<div class="entire-products page">
 
-		<div class="container-fluid">
+				<div class="container-fluid">
 
-			<div class="row">
+					<div class="row">
 
-				<div class="col-md-2 filters-col">
+						<div class="col-md-2 filters-col">
 
-					<div class="filters">
+							<div class="filters">
 
-						<form>
+								<form>
 
-							<div class="filter-criteria">
-								<span>Manufacturer</span>
-								<label><input type="checkbox">Apple</label>
-								<label><input type="checkbox" value="samsung">Samsung</label>
-								<label><input type="checkbox">HTC</label>
-								<label><input type="checkbox">Nokia</label>
-								<label><input type="checkbox">ZTE</label>
-								<label><input type="checkbox">Sony</label>
+									<div class="filter-criteria">
+										<span>Manufacturer</span>
+										<label><input type="checkbox" name="manufacturer" value="apple">Apple </label>
+										<label><input type="checkbox" name="manufacturer" value="samsung">Samsung</label>
+										<label><input type="checkbox" name="manufacturer" value="htc">HTC</label>
+										<label><input type="checkbox" name="manufacturer" value="nokia">Nokia</label>
+										<label><input type="checkbox" name="manufacturer" value="zte">ZTE</label>
+										<label><input type="checkbox" name="manufacturer" value="sony">Sony</label>
+									</div>
+
+									<div class="filter-criteria">
+										<span>Screen Size</span>
+										<label><input type="checkbox" value="16" name="storage">16 GB</label>
+										<label><input type="checkbox" value="32" name="storage">32 GB</label>
+									</div>
+
+									<div class="filter-criteria">
+										<span>OS</span>
+										<label><input type="checkbox" value="android" name="os">Android</label>
+										<label><input type="checkbox" value="ios" name="os">iOS</label>
+										<label><input type="checkbox" value="windows" name="os">Windows</label>
+									</div>
+
+									<div class="filter-criteria">
+										<span>Camera</span>
+										<label><input type="checkbox" value="5" name="camera">5 Mpx</label>
+										<label><input type="checkbox" value="8" name="camera"> 8 Mpx</label>
+										<label><input type="checkbox" value="12" name="camera"> 12 Mpx</label>
+										<label><input type="checkbox" value="15" name="camera">15 Mpx</label>
+									</div>
+
+									<button>Clear filters</button>
+
+								</form>
+
 							</div>
 
-							<div class="filter-criteria">
-								<span>Screen Size</span>
-								<label><input type="checkbox">16 GB</label>
-								<label><input type="checkbox">32 GB</label>
-							</div>
+						</div>
 
-							<div class="filter-criteria">
-								<span>OS</span>
-								<label><input type="checkbox">Android</label>
-								<label><input type="checkbox">iOS</label>
-								<label><input type="checkbox">Windows</label>
-							</div>
+						<div class="col-md-10">
 
-							<div class="filter-criteria">
-								<span>Camera</span>
-								<label><input type="checkbox">5 Mpx</label>
-								<label><input type="checkbox">8 Mpx</label>
-								<label><input type="checkbox">12 Mpx</label>
-								<label><input type="checkbox">15 Mpx</label>
-							</div>
+							<ul class="products-list">
 
-							<button>Clear filters</button>
-
-						</form>
-
+								<!-- ITEM SNPPIET -->
+							   <script id="products-template" type="x-handlebars-template">
+							   	   {{#each this}}
+									<li data index="{{id}}">
+										<a href="#" class="product-photo"><img src="{{image.small}}" height="130" alt="{{name}}"/></a>
+										<h2><a href="#"> {{name}} </a></h2>
+										<ul class="product-description">
+											<li><span>Manufacturer: </span>{{specs.manufacturer}}</li>
+											<li><span>Storage: </span>{{specs.storage}} GB</li>
+											<li><span>OS: </span>{{specs.os}}</li>
+											<li><span>Camera: </span>{{specs.camera}} Mpx</li>
+										</ul>
+										<p class="product-price">{{price}}£</p>
+										<div class="highlight"></div>
+									</li>
+									{{/each}}
+								 </script>
+							</ul>
+						</div>
 					</div>
-
-				</div>
-
-				<div class="col-md-10">
-
-					<ul class="products-list">
-
-						<!-- ITEM SNPPIET -->
-					   <script id="products-template" type="x-handlebars-template">
-					   	   {{#each this}}
-							<li data index="{{id}}">
-								<a href="#" class="product-photo">
-									<img src="{{image.small}}" height="130" alt="{{name}}"/></a>
-								<h2><a href="#"> {{name}} </a></h2>
-								<ul class="product-description">
-									<li><span>Manufacturer: </span>{{specs.manufacturer}}</li>
-									<li><span>Storage: </span>{{specs.storage}} GB</li>
-									<li><span>OS: </span>{{specs.os}}</li>
-									<li><span>Camera: </span>{{specs.camera}} Mpx</li>
-								</ul>
-								<p class="product-price">{{price}}£</p>
-								<div class="highlight"></div>
-							</li>
-							{{/each}}
-						<!-- END OF HTML SNIPPET -->
-						 </script>
-					</ul>
 				</div>
 			</div>
-		</div>
-		<!-- Enitre Products Page closed tag -->
-		</div>
 
 		<div class="single-product page">
 
@@ -116,12 +113,11 @@
 
 		</div>
 
-		<!-- Main content closed tag -->
 	</div>
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
-	<script src="js/app.js"></script>
+	<script src="assets/js/app.js"></script>
 
 </body>
 </html>
